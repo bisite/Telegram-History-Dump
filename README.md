@@ -16,7 +16,7 @@
 
 ### Estructura
 
-![N|estructura](https://i.ibb.co/MML2Dc3/Estructura-Telegram.png)
+![N|estructura](https://i.ibb.co/hBJRJRT/Capturasasa.png)
 
 ---
 
@@ -30,15 +30,15 @@ Descomprime el zip que contiene el proyecto y elimina el archivo comprimido
 
     $ unzip Telegram_Machine_Learning.zip && rm Telegram_Machine_Learning.zip
     
-Ejecutamos el fichero __instalation. sh__ con permisos __sudo__ el cual instalará las bibliotecas necesarias para el correcto funcionamiento del proyecto y se encargará de compilarlo automáticamente.
+Ejecutamos el fichero __installation. sh__ con permisos __sudo__ el cual instalará las bibliotecas necesarias para el correcto funcionamiento del proyecto y se encargará de compilarlo automáticamente.
 
 + Ubuntu 16.04 (64-bits)
 
-    $ sudo sh instalation.sh
+    $ sudo sh installation.sh
 
 + Ubuntu 19.04 (64-bits)
 
-    $ sudo sh instalation_19.sh
+    $ sudo sh installation_19.sh
 
 ---
 
