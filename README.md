@@ -11,7 +11,7 @@
 ### Requisitos
 
 + Ubuntu 16.04 (64-bits)
-
++ Ubuntu 19.04 (64-bits)
 ---
 
 ### Estructura
@@ -32,7 +32,13 @@ Descomprime el zip que contiene el proyecto y elimina el archivo comprimido
     
 Ejecutamos el fichero __instalation. sh__ con permisos __sudo__ el cual instalará las bibliotecas necesarias para el correcto funcionamiento del proyecto y se encargará de compilarlo automáticamente.
 
++ Ubuntu 16.04 (64-bits)
+
     $ sudo sh instalation.sh
+
++ Ubuntu 19.04 (64-bits)
+
+    $ sudo sh instalation_19.sh
 
 ---
 
