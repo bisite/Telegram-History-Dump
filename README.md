@@ -304,3 +304,47 @@ Guardar el fichero y recompilar el proyecto de nuevo:
     $ cd ~/Telegram-History-Dump/telegram/Telegram_Machine_Learning
     $ sudo ./configure --disable-openssl --prefix=/usr CFLAGS="$CFLAGS -w"
     $ sudo make
+
+##### ISSUE 2
+Cuando se establece conexion **telegram_cli** devuelve el error:
+
+    telegram-cli: tgl/mtproto-utils.c:101: BN2ull: Assertion 0' failed. SIGNAL received
+
+##### SOLUCIÓN:
+Abrir el archivo **mtproto-utils.c** ubicado en el directorio **tgl**.
+comentar las líneas **101** y **115** como sigue a continuación:
+
+```c
+static unsigned long long BN2ull (TGLC_bn *b) {
+  if (sizeof (unsigned long) == 8) {
+    return TGLC_bn_get_word (b);
+  } else if (sizeof (unsigned long long) == 8) {
+//    assert (0); // As long as nobody ever uses this code, assume it is broken.
+    unsigned long long tmp;
+    /* Here be dragons, but it should be okay due to be64toh */
+    TGLC_bn_bn2bin (b, (unsigned char *) &tmp);
+    return be64toh (tmp);
+  } else {
+    assert (0);
+  }
+}
+
+static void ull2BN (TGLC_bn *b, unsigned long long val) {
+  if (sizeof (unsigned long) == 8 || val < (1ll << 32)) {
+    TGLC_bn_set_word (b, val);
+  } else if (sizeof (unsigned long long) == 8) {
+//    assert (0); // As long as nobody ever uses this code, assume it is broken.
+    htobe64(val);
+    /* Here be dragons, but it should be okay due to htobe64 */
+    TGLC_bn_bin2bn ((unsigned char *) &val, 8, b);
+  } else {
+    assert (0);
+  }
+}
+```
+
+Guardar el fichero y recompilar el proyecto de nuevo:
+
+    $ cd ~/Telegram-History-Dump/telegram/Telegram_Machine_Learning
+    $ sudo ./configure --disable-openssl --prefix=/usr CFLAGS="$CFLAGS -w"
+    $ sudo make
