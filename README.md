@@ -55,7 +55,7 @@ Ejecutamos el fichero __installation. sh__ con permisos __sudo__ el cual instala
 
 + Debian 10 (64-bits)
 
-    $ sudo sh installation_debian.sh
+    $ sudo sh installation_Debian.sh
     
 ---
 
