@@ -12,6 +12,7 @@
 
 + Ubuntu 16.04 (64-bits)
 + Ubuntu 19.04 (64-bits)
++ Debian 10 (64-bits)
 ---
 
 ### Estructura
@@ -20,7 +21,7 @@
 
 ---
 
-### Instalación
+### Instalación en Ubuntu
 
 Clona el Repositorio GitHub
 
@@ -28,7 +29,7 @@ Clona el Repositorio GitHub
     
 Descomprime el zip que contiene el proyecto y elimina el archivo comprimido
 
-    $ unzip Telegram_Machine_Learning.zip && rm Telegram_Machine_Learning.zip
+    $ unzip Telegram_Machine_Learning.zip && rm Telegram_Machine_Learning.zip && rm Telegram_Machine_Learning_Debian.zip 
     
 Ejecutamos el fichero __installation. sh__ con permisos __sudo__ el cual instalará las bibliotecas necesarias para el correcto funcionamiento del proyecto y se encargará de compilarlo automáticamente.
 
@@ -40,6 +41,22 @@ Ejecutamos el fichero __installation. sh__ con permisos __sudo__ el cual instala
 
     $ sudo sh installation_19.sh
 
+### Instalación en Debian
+
+Clona el Repositorio GitHub
+
+    $ git clone https://github.com/bisite/Telegram-History-Dump.git && cd Telegram-History-Dump/telegram
+    
+Descomprime el zip que contiene el proyecto y elimina el archivo comprimido
+
+    $ unzip Telegram_Machine_Learning_Debian.zip && rm Telegram_Machine_Learning_Debian.zip && rm Telegram_Machine_Learning.zip 
+    
+Ejecutamos el fichero __installation. sh__ con permisos __sudo__ el cual instalará las bibliotecas necesarias para el correcto funcionamiento del proyecto y se encargará de compilarlo automáticamente.
+
++ Debian 10 (64-bits)
+
+    $ sudo sh installation_debian.sh
+    
 ---
 
 ### Ejecución del proyecto
@@ -50,6 +67,7 @@ Ejecutamos el fihero __api. py__ con el que conseguimos controlar las acciones d
     
 | Endpoints | Descripción |
 | ------ | ------ |
+| */start_dump_stop* | **Comprueba** si la ruta de directorios de descarga existe. **Si no existe** crea una nueva ruta de directorios de descarga y lanza el **cliente** Telegram en segundo plano, ejecuta la descarga de historiales de conversaciones y cierra los procesos una vez terminado. **Si existe**, lanza el **cliente** Telegram en segundo plano, ejecuta la descarga de historiales de conversaciones y cierra los procesos una vez terminado.|
 | */start* | **Comprueba** si la ruta de directorios de descarga existe. **Si no existe** crea una nueva ruta de directorios de descarga y lanza el **cliente** Telegram. **Si existe**, lanza el **cliente** Telegram.|
 | */stop* | **Finaliza el proceso** creado por el **cliente** Telegram|
 | */dump* | Lanza **telegram-history-dump.rb**. Descarga el historial de conversaciones existentes de grupos, canales y conversaciones privadas en formato **JSONL**. Lanza **j_to_c.py**, que convierte los archivos descargados a formato **CSV** y **JSON** para poder ser tratados con **Machine Learning**. Previamente se debe haber iniciado el **cliente** Telegram (/start)|
