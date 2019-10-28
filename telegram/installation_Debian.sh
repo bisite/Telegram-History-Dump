@@ -67,7 +67,7 @@ echo "|-------------------------------------------------------------------------
 sudo apt install webp -y
 
 echo "|----------------------------------------------------------------------------> Install libgcrypt 21/22"
-sudo apt-get install -y libgcrypt11-dev
+sudo apt-get install -y libgcrypt-dev
 
 echo "|----------------------------------------------------------------------------> Install zlib1g 22/22"
 sudo apt-get install -y zlib1g-dev
