@@ -6,12 +6,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def init():
-  return "/start_dump_stop || /start || /stop || /dump || /newuser || /dialog_list || /channel_list || /contact_list"
+  return "/start_dump_stop || /img_ocr || /start || /stop || /dump || /newuser || /dialog_list || /channel_list || /contact_list"
 
 @app.route('/start_dump_stop')
 def start_dump_stop():
   os.system("sh start_dump_stop.sh")
   return "Finalizada la descarga"
+
+@app.route('/img_ocr')
+def img_ocr():
+  os.system("python3 img_ocr.py")
+  return "Imagenes analizadas"
 
 @app.route('/start')
 def start():
