@@ -3,21 +3,25 @@
 + Interfaz de línea de comandos para [Telegram](http://telegram.org).
 + Ingesta de datos para el procesamiento con Machine Learning; el poryecto descarga en formato CSV,JSON y JSONL el historial de conversaciones privadas, grupos y canales a los que el usuario está suscrito. 
 
+![N|Requisitos](https://i.ibb.co/B6MVNsL/Captura2.png)
+![N|Requisitos](https://i.ibb.co/y0nt908/Captura.png)
+
 ### Documentación del API y el protocolo
 
 + La documentación del APi de Telegram está disponible aquí: http://core.telegram.org/api
 
 + La documentación del protocolo MTproto está disponible aquí: http://core.telegram.org/mtproto
 ### Requisitos
-
+![N|Requisitos](https://i.ibb.co/F8PzRjz/Requisitos.png)
 + Ubuntu 16.04 (64-bits)
 + Ubuntu 19.04 (64-bits)
 + Debian 10 (64-bits)
++ Raspbian
 ---
 
 ### Estructura
 
-![N|estructura](https://i.ibb.co/hBJRJRT/Capturasasa.png)
+![N|estructura](https://i.ibb.co/dfwbsh0/Imagen2.png)
 
 ---
 
